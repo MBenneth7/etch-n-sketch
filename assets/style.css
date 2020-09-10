@@ -4,14 +4,30 @@
     box-sizing: border-box;
 }
 
+body{
+    margin: 10px 50px 10px 50px;
+}
+
 h1{
-    margin: 10px 50px 0px 50px;
+    display: inline-block;
+    margin: 15px 0px;
+}
+
+button{
+    display: inline-block;
+    position: absolute;
+    top: 25px;
+    left: 270px;
+    background-color:turquoise;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
 }
 
 #sketch-board{
-    margin: 10px 50px 0px 50px;
-    width: 100%;
-    height: 100%;
+    width: 600px;
+    height: 600px;
     display: grid;
     /*grid-template-columns: repeat(16, 1fr);*/
     /*grid-template-rows: repeat(16, 1fr)*/
