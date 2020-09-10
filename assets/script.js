@@ -2,7 +2,7 @@ const sketchBoard = document.querySelector("#sketch-board");
 const button = document.querySelector("button");
 let defaultSize = 10;
 let setGrid = defaultSize * defaultSize; 
-let counter = 0;
+//let counter = 0;
 let squareArr = [];
 
 function addSquare(){
@@ -13,11 +13,13 @@ function addSquare(){
 }
 
 function createBoard(){
+    let counter = 0;
     sketchBoard.style.cssText = 
         `
         grid-template-columns: repeat(${defaultSize},1fr);
         grid-template-rows: repeat(${defaultSize},1fr);              
         `
+
     while(counter < setGrid){
         addSquare();
         counter++;
@@ -42,7 +44,7 @@ function resetBoard(){
     while(sketchBoard.firstChild){
         sketchBoard.removeChild(sketchBoard.firstChild);
     }
-    counter = 0;
+    //counter = 0;
     squareArr = [];
 }
 
