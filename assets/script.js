@@ -1,10 +1,7 @@
 const sketchBoard = document.querySelector("#sketch-board");
 const button = document.querySelector("button");
-let minSize = 50;
-let maxSize = 64; 
-let columns = minSize;
-let rows = minSize;
-let setGrid = rows * columns; 
+let defaultSize = 10;
+let setGrid = defaultSize * defaultSize; 
 let counter = 0;
 let squareArr = [];
 
@@ -18,8 +15,8 @@ function addSquare(){
 function createBoard(){
     sketchBoard.style.cssText = 
         `
-        grid-template-columns: repeat(${columns},1fr);
-        grid-template-rows: repeat(${rows},1fr);              
+        grid-template-columns: repeat(${defaultSize},1fr);
+        grid-template-rows: repeat(${defaultSize},1fr);              
         `
     while(counter < setGrid){
         addSquare();
@@ -42,24 +39,38 @@ function hover(){
 }
 
 function resetBoard(){
+    while(sketchBoard.firstChild){
+        sketchBoard.removeChild(sketchBoard.firstChild);
+    }
+    counter = 0;
+    squareArr = [];
+}
+
+function customBoard(){
 
     button.addEventListener("click",()=>{
-        let userChoice = prompt("Pick the size of your grid (16-64)");
-        sketchBoard.removeChild() //delete current board
-
-        while(userChoice < 16 || userChoice >64){
-            userChoice = prompt("Invalid number... pick size between 16-64");
+    
+        resetBoard();
+        let userChoice = prompt("Pick the size of your board between 10-100");
+        
+        while(userChoice < 10 || userChoice > 100){
+            userChoice = prompt("Invalid size... pick a number between 10-100");
         }
-        columns = userChoice;
-        rows = userChoice;
-        setGrid = userChoice * userChoice;
+    
+        defaultSize = Number(userChoice);
+        setGrid = defaultSize * defaultSize;
+    
+        createBoard();
+        hover();
+    
     });
 
 }
 
+
 createBoard();
 hover();
-//resetBoard();
+customBoard();
 
 
 
