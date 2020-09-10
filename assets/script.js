@@ -2,7 +2,6 @@ const sketchBoard = document.querySelector("#sketch-board");
 const button = document.querySelector("button");
 let defaultSize = 10;
 let setGrid = defaultSize * defaultSize; 
-//let counter = 0;
 let squareArr = [];
 
 function addSquare(){
@@ -27,7 +26,7 @@ function createBoard(){
 }
 
 function color(){
-    const color = Math.floor(Math.random()*16777215).toString(16);
+    const color = Math.floor(Math.random()*16777215).toString(16); //generate random colors
     return color;
 }
 
@@ -44,7 +43,6 @@ function resetBoard(){
     while(sketchBoard.firstChild){
         sketchBoard.removeChild(sketchBoard.firstChild);
     }
-    //counter = 0;
     squareArr = [];
 }
 
@@ -68,7 +66,6 @@ function customBoard(){
     });
 
 }
-
 
 createBoard();
 hover();

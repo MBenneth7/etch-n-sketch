@@ -17,7 +17,7 @@ button{
     display: inline-block;
     position: absolute;
     top: 25px;
-    left: 270px;
+    left: 553px;
     background-color:turquoise;
     padding: 10px;
     border: none;
@@ -26,16 +26,15 @@ button{
 }
 
 #sketch-board{
+    border: 1px solid black;
     width: 600px;
     height: 600px;
     display: grid;
-    /*grid-template-columns: repeat(16, 1fr);*/
-    /*grid-template-rows: repeat(16, 1fr)*/
 }
 
 .square{
-    border: solid 1px black;
     background: #fff;
     height: 100%;
     width: 100%;
+    border-radius: 25px;
 }
